@@ -2,10 +2,11 @@ package br.com.alura.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
+@NoArgsConstructor
 public class Pet {
     private Long id;
     private String tipo;
