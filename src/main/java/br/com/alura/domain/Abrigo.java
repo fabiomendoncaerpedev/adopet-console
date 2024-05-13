@@ -1,19 +1,23 @@
 package br.com.alura.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
 @Getter
+@Setter
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Abrigo {
     private Long id;
     private String nome;
     private String telefone;
     private String email;
+
+    @Override
+    public String toString() {
+        return """
+                     "id":%s,"nome":"%s","telefone":"%s","email":"%s"
+                     """.formatted(this.id, this.nome, this.telefone, this.email);
+    }
 }
